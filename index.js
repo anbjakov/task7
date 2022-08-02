@@ -15,9 +15,14 @@ console.log('----------task 2------------');
 console.log('---------sort method-------')
 
 let findShort = function(expr) {
-    let exprArray = expr.split(" ");
-    exprArray.sort((a,b)=>a.length-b.length);
-    return exprArray[0]
+    if (expr.includes(" ")===false) {
+        return expr
+    } else {
+        let exprArray = expr.split(" ");
+        exprArray.sort((a,b)=>a.length-b.length);
+        return exprArray[0]
+    }
+
 }
 const sentance = "Lorem ipsum dolor sit amet";
 
