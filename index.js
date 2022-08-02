@@ -18,9 +18,8 @@ let findShort = function(expr) {
     if (expr.includes(" ")===false) {
         return expr
     } else {
-        let exprArray = expr.split(" ");
-        exprArray.sort((a,b)=>a.length-b.length);
-        return exprArray[0]
+        expr.split(" ").sort((a,b)=>a.length-b.length);
+        return expr[0]
     }
 
 }
