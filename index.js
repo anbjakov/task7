@@ -15,11 +15,12 @@ console.log('----------task 2------------');
 console.log('---------sort method-------')
 
 let findShort = function(expr) {
-    if (expr.includes(" ")===false) {
+    let exprArray = expr.split(" ");
+    if (exprArray.length===1) {
         return expr
     } else {
-        expr.split(" ").sort((a,b)=>a.length-b.length);
-        return expr[0]
+        exprArray.sort((a,b)=>a.length-b.length);
+        return exprArray[0]
     }
 
 }
@@ -34,11 +35,12 @@ console.log(findShort("She is David's sister")); // is
 console.log('---------reduce method-------')
 let findShortReduce = function(expr) {
     let resultWord = "";
-    if (expr.includes(" ")===false) {
+    let exprArray = expr.split(" ");
+    if (exprArray.length===1) {
         resultWord = expr;
         return resultWord
     } else {
-         resultWord = expr.split(" ").reduce(
+         resultWord =exprArray.reduce(
             (shortestWord, currentWord) =>
                 shortestWord.length>currentWord.length ? currentWord: shortestWord
         )
@@ -49,4 +51,3 @@ console.log(findShortReduce(sentance)); // sit
 console.log(findShortReduce("Hello world")); // Hello
 console.log(findShortReduce("Hi")) // Hi
 console.log(findShortReduce("She is David's sister")); // is
-
